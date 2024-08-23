@@ -40,6 +40,7 @@ import com.example.musicappui.MainViewModel
 import com.example.musicappui.Screen
 import com.example.musicappui.screensInDrawer
 import com.example.musicappui.ui.theme.AccountDialog
+import com.example.musicappui.ui.theme.AccountView
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
@@ -72,7 +73,7 @@ fun MainView(
 
     Scaffold(
         topBar = {
-            TopAppBar(title = { Text(text = "Home")},
+            TopAppBar(title = { Text(text = title.value)},
                 navigationIcon = { IconButton(onClick = {
                     // Open the drawer
                     scope.launch {
@@ -145,10 +146,10 @@ fun Navigation(
 ){
 
     NavHost(navController = navController as NavHostController,
-        startDestination = Screen.DrawerScreen.AddAccount.route, modifier =  Modifier.padding(pd)) {
+        startDestination = Screen.DrawerScreen.Account.route, modifier =  Modifier.padding(pd)) {
 
-        composable(Screen.DrawerScreen.AddAccount.route){
-
+        composable(Screen.DrawerScreen.Account.route){
+            AccountView()
         }
 
         composable(Screen.DrawerScreen.Subscription.route){
