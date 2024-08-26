@@ -173,6 +173,18 @@ fun Navigation(
     NavHost(navController = navController as NavHostController,
         startDestination = Screen.DrawerScreen.Account.route, modifier =  Modifier.padding(pd)) {
 
+        composable(Screen.BottomScreen.Home.bRoute){
+            // TODO Add Home SCREEN
+        }
+
+        composable(Screen.BottomScreen.Library.bRoute){
+            // TODO Add Library SCREEN
+        }
+
+        composable(Screen.BottomScreen.Browse.bRoute){
+            // TODO Add Browse SCREEN
+        }
+
         composable(Screen.DrawerScreen.Account.route){
             AccountView()
         }
