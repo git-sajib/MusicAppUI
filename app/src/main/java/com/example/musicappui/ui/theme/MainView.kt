@@ -45,6 +45,7 @@ import com.example.musicappui.screenInBottom
 import com.example.musicappui.screensInDrawer
 import com.example.musicappui.ui.theme.AccountDialog
 import com.example.musicappui.ui.theme.AccountView
+import com.example.musicappui.ui.theme.Browse
 import com.example.musicappui.ui.theme.Home
 import com.example.musicappui.ui.theme.Subscription
 import kotlinx.coroutines.CoroutineScope
@@ -88,8 +89,8 @@ fun MainView(
                             Icon(painter = painterResource(id = item.icon), contentDescription = item.bTitle)
                         },
                         label = { Text(text = item.bTitle)},
-                        selectedContentColor = Color.White,
-                        unselectedContentColor = Color.White.copy(alpha = 0.4f),
+                        selectedContentColor = Color.Red,
+                        unselectedContentColor = Color.Green,
                     )
                 }
             }
@@ -179,11 +180,11 @@ fun Navigation(
         }
 
         composable(Screen.BottomScreen.Library.bRoute){
-            // TODO Add Library SCREEN
+            // TODO Add Browse SCREEN
         }
 
         composable(Screen.BottomScreen.Browse.bRoute){
-            // TODO Add Browse SCREEN
+            Browse()
         }
 
         composable(Screen.DrawerScreen.Account.route){
